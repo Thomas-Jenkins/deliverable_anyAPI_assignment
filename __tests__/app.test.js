@@ -17,4 +17,9 @@ describe('books routes', () => {
     expect(res.body).toEqual(expected);
   });
   
+  it('/:id should return the details of a single book matching the id', async () => {
+    const res = await request(app).get('/books/1');
+    const 
+  })
+
 });
