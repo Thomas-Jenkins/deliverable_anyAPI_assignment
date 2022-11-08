@@ -3,6 +3,7 @@ const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
 const { books } = require('../lib/books-data');
+const { alchemy_assignments } = require('../lib/alchemy_assignments')
 
 describe('books routes', () => {
   beforeEach(() => {
@@ -40,5 +41,15 @@ describe('alchemy_assignments routes', () => {
     return setup(pool);
   });
 
-  it
-})
+  it('/alchemy_assignments should return a list of alchemy assignments', async () => {
+    const res = await request(app).get('/alchemy_assignments');
+    const expected = alchemy_assignments.map((assignment) => {
+      return { id: assignment.id, name: assignment.name };
+    });
+    expect(res.body).toEqual(expected);
+  });
+
+  afterAll(() => {
+    pool.end();
+  });
+});
