@@ -31,6 +31,17 @@ describe('route tests', () => {
     expect(res.body).toEqual(expected);
   });
 
+  it('/assignments/id should return details of a single assignment matching the id', async () => {
+    const res = await request(app).get('/alchemy_assignments/1');
+    const magic8Ball =  {
+      id: '1',
+      name: 'Magic 8 Ball',
+      module: 1,
+      description: 'An assignment from Alchemy Code Labs to build a Magic 8 ball using HTML, CSS, and Javascript'
+    };
+    expect(res.body).toEqual(magic8Ball);
+  });
+
   it('/alchemy_assignments should return a list of alchemy assignments', async () => {
     const res = await request(app).get('/alchemy_assignments');
     const expected = alchemy_assignments.map((assignment) => {
