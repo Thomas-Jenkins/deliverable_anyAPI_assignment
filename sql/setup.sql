@@ -34,7 +34,7 @@ INSERT INTO alchemy_assignments (name, module, description)
 
 VALUES
 ('Magic 8 Ball', 1, 'An assignment from Alchemy Code Labs to build a Magic 8 ball using HTML, CSS, and Javascript'),
-('Goblin fighter', 1, 'An assignment from Alchemy Code Labs to build a Goblin Fighter Game using HTML, CSS, and Javascript'),
+('Goblin Fighter', 1, 'An assignment from Alchemy Code Labs to build a Goblin Fighter Game using HTML, CSS, and Javascript'),
 ('Pokemon Compendium', 2, 'An assignment from Alchemy Code Labs to build a Pokemon Compendium using third party APIS and React'),
 ('Tic Tac Toe', 2, 'An Assignment from Alchemy Code Labs to build a Tic Tac Toe Game using React and Context to pass game state'),
 ('Zodiac API', 3, 'An Assignment from Alchemy Code Labs to build an API of Zodiac signs');

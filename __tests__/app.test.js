@@ -3,9 +3,9 @@ const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
 const { books } = require('../lib/books-data');
-const { alchemy_assignments } = require('../lib/alchemy_assignments')
+const { alchemy_assignments } = require('../lib/alchemy_assignments');
 
-describe('books routes', () => {
+describe('route tests', () => {
   beforeEach(() => {
     return setup(pool);
   });
@@ -30,16 +30,6 @@ describe('books routes', () => {
     });
     expect(res.body).toEqual(expected);
   });
-  
-  afterAll(() => {
-    pool.end();
-  });
-});
-
-describe('alchemy_assignments routes', () => {
-  beforeEach(() => {
-    return setup(pool);
-  });
 
   it('/alchemy_assignments should return a list of alchemy assignments', async () => {
     const res = await request(app).get('/alchemy_assignments');
@@ -48,8 +38,10 @@ describe('alchemy_assignments routes', () => {
     });
     expect(res.body).toEqual(expected);
   });
-
+  
   afterAll(() => {
     pool.end();
   });
 });
+
+
